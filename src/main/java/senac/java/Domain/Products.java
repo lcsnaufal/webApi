@@ -1,11 +1,11 @@
 package senac.java.Domain;
 
-public interface Products {
-    int id = 0;
-    String pName = "";
-    String pPrice = "";
-    String pColor = "";
-    String pDescription = "";
-    int pQuantity = 0;
-    String img = "";
+public class Products {
+    public int id = 0;
+    public String pName = "";
+    public String pPrice = "";
+    public String pColor = "";
+    public String pDescription = "";
+    public int pQuantity = 0;
+    public String img = "";
 }
