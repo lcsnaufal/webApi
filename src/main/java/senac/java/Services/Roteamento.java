@@ -23,6 +23,8 @@ public class Roteamento {
                 screensCadastro.productsScreen();
                 break;
             case 4:
+                System.out.println("");
+                System.out.println("Programa Encerrado");
                 exit(0);
                 break;
             default:
@@ -41,6 +43,8 @@ public class Roteamento {
         }else if (responseAgainSeller.equals("NAO") | responseAgainSeller.equals("NÃO")){
             Screens.StartScreen();
         }else if (responseAgainSeller.equals("SAIR")){
+            System.out.println("");
+            System.out.println("Programa Encerrado");
             System.exit(0);
         }else{
             System.out.println("");
@@ -57,6 +61,8 @@ public class Roteamento {
         }else if (responseAgainUser.equals("NAO") | responseAgainUser.equals("NÃO")){
             Screens.StartScreen();
         }else if (responseAgainUser.equals("SAIR")){
+            System.out.println("");
+            System.out.println("Programa Encerrado");
             System.exit(0);
         }else{
             System.out.println("");
@@ -72,6 +78,8 @@ public class Roteamento {
         }else if (responseAgainProducts.equals("NAO") | responseAgainProducts.equals("NÃO")){
             Screens.StartScreen();
         }else if (responseAgainProducts.equals("SAIR")){
+            System.out.println("");
+            System.out.println("Programa Encerrado");
             System.exit(0);
         }else{
             System.out.println("");

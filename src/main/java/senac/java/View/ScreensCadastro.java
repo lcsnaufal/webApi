@@ -8,35 +8,34 @@ import senac.java.Services.Roteamento;
 public class ScreensCadastro {
 
         static Scanner sc = new Scanner(System.in);
-        static Users user = new Users();
-        static Salesperson salesperson = new Salesperson();
-        static Products products = new Products();
 
         static Roteamento rotas = new Roteamento();
 
 
     public static void sellerScreen(){
+        Salesperson salesperson = new Salesperson();
         String responseAgainSeller = "";
 
-        System.out.println("Insira seu nome");
+        System.out.println("");
+        System.out.println("Insira seu nome: ");
         salesperson.name = sc.nextLine();
-        System.out.println("Insira seu sobrenome");
+        System.out.println("Insira seu sobrenome: ");
         salesperson.lastName = sc.nextLine();
-        System.out.println("Insira seu número de celular");
+        System.out.println("Insira seu número de celular: ");
         salesperson.phoneNumber = sc.nextLine();
-        System.out.println("Insira seu cpf");
+        System.out.println("Insira seu CPF: ");
         salesperson.cpf = sc.nextLine();
-        System.out.println("Insira seu email");
+        System.out.println("Insira seu Email: ");
         salesperson.email = sc.nextLine();
-        System.out.println("Insira seu endereço");
+        System.out.println("Insira seu endereço: ");
         salesperson.address = sc.nextLine();
 
         System.out.println("");
         System.out.println("Informações obtidas:");
         System.out.println("Nome: " + salesperson.name);
         System.out.println("Sobrenome: " + salesperson.lastName);
-        System.out.println("Número de celular" + salesperson.phoneNumber);
-        System.out.println("Cpf: " + salesperson.cpf);
+        System.out.println("Número de celular: " + salesperson.phoneNumber);
+        System.out.println("CPF: " + salesperson.cpf);
         System.out.println("Email: " + salesperson.email);
         System.out.println("Endereço: " + salesperson.address);
 
@@ -50,21 +49,23 @@ public class ScreensCadastro {
     }
 
     public static void userScreen(){
+        Users user = new Users();
         String responseAgainUser = "";
 
-        System.out.println("Insira seu nome");
+        System.out.println("");
+        System.out.println("Insira seu nome:");
         user.name = sc.nextLine();
-        System.out.println("Insira seu sobrenome");
+        System.out.println("Insira seu sobrenome:");
         user.lastName = sc.nextLine();
-        System.out.println("Insira sua idade");
+        System.out.println("Insira sua idade:");
         user.age = Integer.parseInt(sc.nextLine());
-        System.out.println("Insira seu endereço");
+        System.out.println("Insira seu endereço:");
         user.address = sc.nextLine();
-        System.out.println("Insira seu email");
+        System.out.println("Insira seu email:");
         user.email = sc.nextLine();
-        System.out.println("Insira sua senha");
+        System.out.println("Insira sua senha:");
         user.password = sc.nextLine();
-        System.out.println("Insira seu cpf");
+        System.out.println("Insira seu CPF:");
         user.cpf = sc.nextLine();
 
         System.out.println("");
@@ -74,7 +75,7 @@ public class ScreensCadastro {
         System.out.println("Idade: " + user.age);
         System.out.println("Endereço: " + user.address);
         System.out.println("Email: " + user.email);
-        System.out.println("Cpf: " + user.cpf);
+        System.out.println("CPF: " + user.cpf);
 
         System.out.println("");
         System.out.println("Deseja cadastrar novamente? (SIM para cadastrar novamente, NAO para voltar a tela inicial ou SAIR para sair do programa");
@@ -84,8 +85,10 @@ public class ScreensCadastro {
     }
 
     public static void productsScreen(){
+        Products products = new Products();
         String responseAgainProducts = "";
 
+        System.out.println("");
         System.out.println("Insira o nome do produto");
         products.pName = sc.nextLine();
         System.out.println("Insira o preço do produto");

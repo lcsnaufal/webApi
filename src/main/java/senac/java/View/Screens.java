@@ -15,6 +15,7 @@ public class Screens {
         int response = 0;
         Roteamento rotas = new Roteamento();
         System.out.println("Bem-Vindo ao programa de cadastros!");
+        System.out.println("");
         System.out.println("1. Cadastrar Vendedor");
         System.out.println("2. Cadastrar Cliente");
         System.out.println("3. Cadastrar Produto");
