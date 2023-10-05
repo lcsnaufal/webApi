@@ -1,11 +1,11 @@
 package senac.java.Domain;
 
 public class Products {
-    public int id = 0;
-    public String pName = "";
-    public String pPrice = "";
-    public String pColor = "";
-    public String pDescription = "";
-    public int pQuantity = 0;
-    public String img = "";
+    public static int id = 0;
+    public static String pName = "";
+    public static String pPrice = "";
+    public static String pColor = "";
+    public static String pDescription = "";
+    public static int pQuantity = 0;
+    public static String img = "";
 }

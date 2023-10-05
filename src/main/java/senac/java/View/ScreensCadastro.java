@@ -12,6 +12,7 @@ public class ScreensCadastro {
         static Roteamento rotas = new Roteamento();
 
 
+
     public static void sellerScreen(){
         Salesperson salesperson = new Salesperson();
         String responseAgainSeller = "";
@@ -40,7 +41,7 @@ public class ScreensCadastro {
         System.out.println("Endereço: " + salesperson.address);
 
         System.out.println("");
-        System.out.println("Deseja cadastrar novamente? (SIM para cadastrar novamente, NAO para voltar a tela inicial ou SAIR para sair do programa");
+        System.out.println("Deseja cadastrar um vendedor novamente? (SIM para cadastrar novamente, NAO para voltar a tela inicial ou SAIR para sair do programa");
         responseAgainSeller = sc.nextLine().toUpperCase();
         rotas.rotasEndSeller(responseAgainSeller);
 
@@ -78,7 +79,7 @@ public class ScreensCadastro {
         System.out.println("CPF: " + user.cpf);
 
         System.out.println("");
-        System.out.println("Deseja cadastrar novamente? (SIM para cadastrar novamente, NAO para voltar a tela inicial ou SAIR para sair do programa");
+        System.out.println("Deseja cadastrar um cliente novamente? (SIM para cadastrar novamente, NAO para voltar a tela inicial ou SAIR para sair do programa");
         responseAgainUser = sc.nextLine().toUpperCase();
         rotas.rotasEndUser(responseAgainUser);
 
@@ -112,7 +113,7 @@ public class ScreensCadastro {
         System.out.println("Imagem: " + products.img);
 
         System.out.println("");
-        System.out.println("Deseja cadastrar novamente? (SIM para cadastrar novamente, NAO para voltar a tela inicial ou SAIR para sair do programa");
+        System.out.println("Deseja cadastrar um produto novamente? (SIM para cadastrar novamente, NAO para voltar a tela inicial ou SAIR para sair do programa");
         responseAgainProducts = sc.nextLine().toUpperCase();
         rotas.rotasEndProducts( responseAgainProducts);
     }
