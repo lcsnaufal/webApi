@@ -15,9 +15,6 @@ import senac.java.Controllers.SalesPersonController;
 
 public class Servidor {
 
-    HttpExchange pathCreator;
-    Users users = new Users();
-
 
     public void apiServer() throws IOException{
 

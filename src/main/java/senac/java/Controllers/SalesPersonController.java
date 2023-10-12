@@ -28,7 +28,8 @@ public class SalesPersonController {
 
             if ("GET".equals(exchange.getRequestMethod())){
                 response = "Essa e a rota de vendedor - GET";
-                res.enviarResponseJson(exchange, responseJson);
+
+                res.enviarResponseJson(exchange, responseJson, 200);
             }
             else if ("POST".equals(exchange.getRequestMethod())){
                 response = "Essa e a rota de vendedor - POST";

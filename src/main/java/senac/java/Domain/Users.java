@@ -1,5 +1,10 @@
 package senac.java.Domain;
 
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Users {
 
     int id = 0;
@@ -73,10 +78,42 @@ public class Users {
     }
 
     public String getCpf(){
+
         return cpf;
     }
 
     public void setCpf(String cpf){
         this.cpf = cpf;
+    }
+
+    public JSONObject toJson(){
+        JSONObject json = new JSONObject();
+
+        json.put("name", name);
+        json.put("lastName", lastName);
+        json.put("age", age);
+        json.put("address", address);
+        json.put("email", email);
+        json.put("password", password);
+        json.put("cpf", cpf);
+
+        return json;
+    }
+
+    public static Users getUser(int index, List<Users> usersList){
+
+        if(index >= 0 && index < usersList.size())  {
+
+            return usersList.get(index);
+
+        }
+
+        else{
+            return null;
+        }
+    }
+
+    public static List<Users> getAllUsers(List<Users> usersList){
+        return usersList;
     }
 }
