@@ -9,9 +9,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException{
         Servidor servidor = new Servidor();
-        Screens screens = new Screens();
+//        Screens screens = new Screens();
 
         servidor.apiServer();
-        screens.StartScreen();
+//        screens.StartScreen();
     }
 }

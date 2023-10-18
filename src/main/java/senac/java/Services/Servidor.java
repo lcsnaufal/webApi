@@ -1,5 +1,6 @@
 package senac.java.Services;
 
+import com.sun.net.httpserver.Headers;
 import senac.java.Domain.Users;
 import com.sun.net.httpserver.HttpServer;  // Criar um servidor
 import com.sun.net.httpserver.HttpExchange;  //  Envia a requisicao do front pro back (passa pelos caminhos)
@@ -19,17 +20,40 @@ public class Servidor {
     public void apiServer() throws IOException{
 
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(3000),
+        HttpServer server = HttpServer.create(new InetSocketAddress(3001),
                 0);
 
-        server.createContext("/api/vendedor", new SalesPersonController.SalesPersonHandler());
-        server.createContext("/api/usuario",  new UserController.UserHandler());
-        server.createContext("/api/produtos", new ProductController.ProductsHandler());
+        HttpHandler SalespersonHandler = new SalesPersonController.SalesPersonHandler();
+        HttpHandler UserHandler = new UserController.UserHandler();
+        HttpHandler ProductsHandler = new ProductController.ProductsHandler();
+
+
+        server.createContext("/api/vendedor", exchange -> {
+            configureCorsHeaders(exchange);
+            SalespersonHandler.handle(exchange);
+        });
+
+        server.createContext("/api/usuario", exchange -> {
+            configureCorsHeaders(exchange);
+            UserHandler.handle(exchange);
+        });
+
+        server.createContext("/api/products", exchange -> {
+            configureCorsHeaders(exchange);
+            ProductsHandler.handle(exchange);
+        });
 
         server.setExecutor(null);
         System.out.println("Servidor Iniciado");
         server.start();
-    }}
+    }
+
+    private void configureCorsHeaders(HttpExchange exchange){
+        Headers headers = exchange.getResponseHeaders();
+        headers.set("Acess-Control-Allow-Origin", "*");
+        headers.set("Acess-Control-Allor-Methods", "GET, POST, PUT, DELETE");
+    }
+}
 
 
 

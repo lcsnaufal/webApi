@@ -8,11 +8,10 @@ import senac.java.Services.ResponseEndPoints;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import senac.java.Services.ResponseEndPoints;
 
 public class UserController {
 
@@ -30,6 +29,8 @@ public class UserController {
 
                 List<Users> getAllFromArray = Users.getAllUsers(usersList);
 
+                System.out.println(Users.getAllUsers(usersList) + "AQUI");
+
                 if(!getAllFromArray.isEmpty()){
 
                     for(Users user : getAllFromArray){
@@ -46,33 +47,9 @@ public class UserController {
                 else {
                     System.out.println("Nenhum usuario foi encontrado");
                 }
-
-
-
-
-
-
-
-//                Users getFromArray = Users.getUser(0, usersList);
-//                if (getFromArray != null){
-//                    System.out.println("Name: " + getFromArray.getName());
-//                    System.out.println("Last Name: " + getFromArray.getLastName());
-//                    System.out.println("Age: " + getFromArray.getAge());
-//                    System.out.println("Address: " + getFromArray.getAddress());
-//                    System.out.println("Email: " + getFromArray.getEmail());
-//                    System.out.println("Password: " + getFromArray.getPassword());
-//                    System.out.println("Cpf" + getFromArray.getCpf());
-//                }
-//                else {
-//                    System.out.println("Usuário nao encontrado");
-//                }
-//                response = "Essa e a rota de usuario - GET";
-//                res.enviarResponse(exchange, response);
-
             }
 
             else if ("POST".equals(exchange.getRequestMethod())) {
-                response = "Essa e a rota de usuario - POST";
 
                 try (InputStream requestBody = exchange.getRequestBody()) {
 

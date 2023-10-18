@@ -16,8 +16,8 @@ public class ResponseEndPoints {
             os.close();
     }
 
-    public static void enviarResponseJson(HttpExchange exchange, JSONObject response, Integer statusCode) throws IOException{
-
+    public static void enviarResponseJson(HttpExchange exchange, String response, Integer statusCode) throws IOException{
+//        JSONObject response
         exchange.getResponseHeaders().set("Content-Type", "application/json");      // aceitar o tipo json
 
         byte[] responseBytes = response.toString().getBytes("UTF-8");      // transforma em array e pega todos os dados em BYTES na UTF 8
