@@ -85,7 +85,43 @@ public class Salesperson {
         json.put("cpf", cpf);
         json.put("email", email);
         json.put("address", address);
+
         return json;
+    }
+
+    public JSONObject arrayToJson(List<Salesperson> salespersonList) {
+        JSONObject json = new JSONObject();
+
+        if (!salespersonList.isEmpty()) {
+            var keyJson = 1;
+
+            for (Salesperson salesperson : salespersonList) {
+
+                JSONObject jsonFor = new JSONObject();
+
+
+
+                json.put("name", salesperson.getName());
+                json.put("lastName", salesperson.getLastName());
+                json.put("cpf", salesperson.getCpf());
+                json.put("email", salesperson.getEmail());
+                json.put("phoneNumber", salesperson.getPhoneNumber());
+                json.put("address", salesperson.getAddress());
+
+                keyJson++;
+
+
+                json.put(String.valueOf(keyJson), jsonFor);
+
+
+            }
+            return json;
+        }
+
+        else{
+            return null;
+        }
+
     }
 
     public static Salesperson getSalesperson(int index, List<Salesperson> salespersonList){

@@ -30,9 +30,12 @@ public class SalesPersonController {
 
                 List<Salesperson> getAllFromArray = Salesperson.getAllSalesperson(salespersonList);
 
+
                 if(!getAllFromArray.isEmpty()){
 
-                    for(Salesperson salesperson : getAllFromArray){
+                    Salesperson salesperson = new Salesperson();
+
+                    for(Salesperson salespersonJson : getAllFromArray){
                         System.out.println("Name: " + salesperson.getName());
                         System.out.println("Last Name: " + salesperson.getLastName());
                         System.out.println("Cpf" + salesperson.getCpf());
@@ -41,8 +44,15 @@ public class SalesPersonController {
                         System.out.println("Address: " + salesperson.getAddress());
                         System.out.println("");
                     }
+
+                    JSONObject teste = salesperson.arrayToJson(getAllFromArray);
+
+                    System.out.println("teste" + teste);
+                    System.out.println("getallfromarray"+getAllFromArray);
+                    System.out.println("salespersonList"+salespersonList);
+
                     response = "Dados encontrados com sucesso";
-                    res.enviarResponseJson(exchange, response, 200);
+                    res.enviarResponseJson(exchange, salesperson.arrayToJson(getAllFromArray), 200);
                 }
 
                 else{
@@ -67,7 +77,10 @@ public class SalesPersonController {
                     );
 
                     salespersonList.add(salesperson);
+
                     System.out.println("SalesPersonList contém: " + salesperson.toJson());
+
+                    res.enviarResponseJson(exchange, salesperson.toJson(), 200);
                 }
             }
 

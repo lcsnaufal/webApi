@@ -50,8 +50,8 @@ public class Servidor {
 
     private void configureCorsHeaders(HttpExchange exchange){
         Headers headers = exchange.getResponseHeaders();
-        headers.set("Acess-Control-Allow-Origin", "*");
-        headers.set("Acess-Control-Allor-Methods", "GET, POST, PUT, DELETE");
+        headers.set("Access-Control-Allow-Origin", "*");
+        headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     }
 }
 
