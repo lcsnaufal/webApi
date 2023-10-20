@@ -93,7 +93,7 @@ public class Salesperson {
         JSONObject json = new JSONObject();
 
         if (!salespersonList.isEmpty()) {
-            var keyJson = 1;
+            var keyJson = 0;
 
             for (Salesperson salesperson : salespersonList) {
 
@@ -101,17 +101,20 @@ public class Salesperson {
 
 
 
-                json.put("name", salesperson.getName());
-                json.put("lastName", salesperson.getLastName());
-                json.put("cpf", salesperson.getCpf());
-                json.put("email", salesperson.getEmail());
-                json.put("phoneNumber", salesperson.getPhoneNumber());
-                json.put("address", salesperson.getAddress());
-
-                keyJson++;
+                jsonFor.put("name", salesperson.getName());
+                jsonFor.put("lastName", salesperson.getLastName());
+                jsonFor.put("cpf", salesperson.getCpf());
+                jsonFor.put("email", salesperson.getEmail());
+                jsonFor.put("phoneNumber", salesperson.getPhoneNumber());
+                jsonFor.put("address", salesperson.getAddress());
 
 
                 json.put(String.valueOf(keyJson), jsonFor);
+
+                keyJson++;
+
+                System.out.println(salesperson.getName());
+
 
 
             }
@@ -119,6 +122,7 @@ public class Salesperson {
         }
 
         else{
+
             return null;
         }
 

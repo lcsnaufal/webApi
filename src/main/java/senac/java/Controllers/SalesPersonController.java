@@ -36,18 +36,15 @@ public class SalesPersonController {
                     Salesperson salesperson = new Salesperson();
 
                     for(Salesperson salespersonJson : getAllFromArray){
-                        System.out.println("Name: " + salesperson.getName());
-                        System.out.println("Last Name: " + salesperson.getLastName());
-                        System.out.println("Cpf" + salesperson.getCpf());
-                        System.out.println("Email: " + salesperson.getEmail());
-                        System.out.println("Número de telefone: " + salesperson.getPhoneNumber());
-                        System.out.println("Address: " + salesperson.getAddress());
+                        System.out.println("Name: " + salespersonJson.getName());
+                        System.out.println("Last Name: " + salespersonJson.getLastName());
+                        System.out.println("Cpf" + salespersonJson.getCpf());
+                        System.out.println("Email: " + salespersonJson.getEmail());
+                        System.out.println("Número de telefone: " + salespersonJson.getPhoneNumber());
+                        System.out.println("Address: " + salespersonJson.getAddress());
                         System.out.println("");
                     }
 
-                    JSONObject teste = salesperson.arrayToJson(getAllFromArray);
-
-                    System.out.println("teste" + teste);
                     System.out.println("getallfromarray"+getAllFromArray);
                     System.out.println("salespersonList"+salespersonList);
 
@@ -81,6 +78,13 @@ public class SalesPersonController {
                     System.out.println("SalesPersonList contém: " + salesperson.toJson());
 
                     res.enviarResponseJson(exchange, salesperson.toJson(), 200);
+                }
+                catch(Exception e){
+                    String ExceptionResponse = e.toString();
+
+                    System.out.println(ExceptionResponse);
+                    System.out.println("------------------------------------------------");
+
                 }
             }
 
